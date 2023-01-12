@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>BERT</title>
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|" rel="stylesheet" type="text/css">
+		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="fonts/iconmoon.css" rel="stylesheet" type="text/css">
+		<link rel = "icon" href = "https://i.postimg.cc/wxfykpRf/lelalogo.png" type = "image/x-icon">
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="../static/style.css">
+		
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+		<style>
+			@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+.containerMyDiet {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 30px;
+  color: #777;
+}
+
+#contact input[type="text"],
+#contact textarea,
+#contact button[type="submit"] {
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+#contact {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#contact h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contact input[type="text"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #e31096;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#contact button[type="submit"]:hover {
+  background: #ffc0f8;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+		</style>
+	</head>
+
+
+	<body>
+		
+		<div id="site-content">
+			<header class="site-header">
+				<div class="container">
+					<a id="branding" class="pull-left" href="/">
+						<img src="https://i.postimg.cc/wxfykpRf/lelalogo.png" height="80px" width= "62px">
+						
+						<h1 class="site-title">BERT</h1>
+					</a>
+					<!-- Default snippet for navigation -->
+					<div class="main-navigation pull-right">
+						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							
+							<!-- <li class="menu-item"><a id="about" href="/about">About me</a></li> -->
+							<!-- <li class="menu-item"><a id="index" href="/index">Home</a></li> -->
+							<!-- <li class="menu-item"><a id="recipe" href="/recipe">Recipes</a></li> -->
+							<!-- <li class="menu-item"><a id="mainmenu" href="/">Main Menu</a></li> -->
+							<!-- <li class="menu-item"><a id="logoutbutton" href="/logoutbutton">Logout</a></li> -->
+							
+						</ul> <!-- .menu -->
+					</div> <!-- .main-navigation -->
+
+					<div class="mobile-navigation"></div>
+				</div>
+			</header> <!-- .site-header -->
+
+			<main class="main-content">
+				
+				<div class="content">
+					<div class="container">
+						
+						<h2 class="entry-title">ENTER THE SENTENCES TO PREDICT THE OUTPUT</h2>
+
+						<hr>
+						<div class="containerMyDiet">  
+							<form id="contact" action="" method="post">
+							  <h4>Enter the following details</h4>
+							  <fieldset>
+								<label>Sentence A</label>
+								<input placeholder="Enter Sentence A" type="text" name="sentence1" tabindex="1" required autofocus>
+							  </fieldset>
+							  <fieldset>
+								<label>Sentence B</label>
+								<input placeholder="Enter Sentence B" type="text" tabindex="2" name="sentence2"required>
+							  </fieldset>
+					
+								<!-- <a href="./report.html" id="contact-submit" data-submit="...Sending" style="font-size:22px">Submit</a> -->
+								<input type="submit"></input>
+							  </fieldset>
+							</form>
+							<!-- <button name="submit" type="submit" >Submit</button> -->
+						  </div>
+						<!-- <div class="row">
+							<div class="col-md-3">
+								<div class="feature color-purple">
+									<div class="feature-icon"><i class="icon-bowl"></i></div>
+									<h3 class="feature-title">Oats</h3>
+									<p>Oats are incredibly nutritious, they can lower cholesterol levels & protect LDL cholesterol from damage, oats contain a powerful soluble fiber called Beta-Glucan. </p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="feature color-green">
+									<div class="feature-icon"><i class="icon-oil"></i></div>
+									<h3 class="feature-title">Apple Cider Vinegar</h3>
+									<p>Apple cider vinegar has various healthful properties, including antimicrobial and antioxidant effects. It also offers health benefits such as aiding weight loss, reducing cholesterol, lowering blood sugar levels, and improving the symptoms of diabetes. </p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="feature color-pink">
+									<div class="feature-icon"><i class="icon-honey"></i></div>
+									<h3 class="feature-title">Honey Peanut Butter</h3>
+									<p>Honey peanut butter decreases the blood sugar spikes and the effect last longer, it suppresses hunger and helps in weight loss. As it has the combination of fiber and protein, it keeps one feeling fuller for long time. </p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="feature color-orange">
+									<div class="feature-icon"><i class="icon-chocolate"></i></div>
+									<h3 class="feature-title">Meat and Poultry</h3>
+									<p>Meat and poultry are great sources of protein. They also provide lots of other nutrients like iodine, iron, zinc, vitamins (especially B12) and essential fatty acids. It's a good idea to eat meat and poultry every week as part of your balanced diet. </p>
+								</div>
+							</div>
+						</div> -->
+
+						<!-- <hr>
+
+						<p>Staying healthy physically can help you stay healthy emotionally too. If you're eating the right food and keeping fit, your body will be strong and help you to cope with stress and also fight illness. Eating well and exercising often when you're a teenager will also help you stay in good health later in life. Getting regular sleep is another really important way to stay healthy. Having late nights can leave you feeling tired the next day. It can be difficult, but try to have at least 8 hours sleep each night.
+</p>
+					</div>
+				</div> -->
+
+			</main> <!-- .main-content -->
+			
+			<footer class="site-footer">
+				<div class="container" href="/">
+					<img src="https://i.postimg.cc/wxfykpRf/lelalogo.png" height="80px" width= "62px">
+					<nav class="footer-navigation">
+						<!-- <a id="about" href="/about">About me</a> -->
+						<!-- <a id="index" href="/index">Home</a> -->
+						<!-- <a id="recipe" href="/recipe">Recipes</a> -->
+						<!-- <a id="logoutbutton" href="/logoutbutton">Logout</a> -->
+					</nav>
+					 
+					<div class="colophon">
+						 <p>Copyright 2022 Semantic Similarity. Designed by Aman and Kael. All right reserved.</p>
+					</div>
+				</div>
+			</footer>
+
+		</div>
+
+		
+
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/app.js"></script>
+		
+	</body>
+
+</html>
